@@ -1,7 +1,6 @@
 {
-  "storage-driver": "aufs",
   "hosts": [
-    "unix:///var/run/docker.sock",
+    "unix:///var/tmp/docker.sock",
     "tcp://0.0.0.0:2375"
   ],
   "insecure-registries": [

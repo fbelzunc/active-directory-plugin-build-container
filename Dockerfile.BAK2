@@ -1,0 +1,17 @@
+FROM ubuntu:14.04
+LABEL maintainer="fbelzunc@gmail.com"
+
+RUN apt-get update && apt-get install -qqy \
+    software-properties-common \
+    python-software-properties
+RUN apt-add-repository ppa:openjdk-r/ppa
+RUN apt-get update
+RUN apt-get install openjdk-8-jdk \
+                    bash
+
+
+ENV JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk/
+ENV DOCKER_STORAGE_DRIVER=overlay2
+ENV DOCKER_HOST=unix:///var/tmp/docker.sock
+
+WORKDIR /project
