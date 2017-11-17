@@ -15,4 +15,4 @@ WORKDIR /project
 
 ENTRYPOINT ["/sbin/tini","-g","--","bash","/usr/local/bin/custom-dockerd-entrypoint.sh"]
 
-CMD ["clean","package"]
+CMD ["clean","install"]
